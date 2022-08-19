@@ -1,0 +1,158 @@
+@import "../Base/setup.css";
+
+svg {
+    height: 1rem;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+}
+
+main {
+    min-height: 100vh;
+    background-color: var(--primaryLight);
+}
+
+.toolBar{
+    display:flex;
+    justify-content: flex-end;
+    align-items: center;
+    min-height:7vh;
+    padding: 0 3rem;
+    background-color: var(--clrAccent);
+}
+
+.first{
+    background-color: #6366f1;
+}
+
+.second{
+    background-color: #f59e0b;
+}
+
+.third{
+    background-color: #ef4444;
+}
+
+.forth{
+    background-color: #6366f1;
+}
+
+.fifth{
+    background-color: #ec4899;
+}
+
+.sixth{
+    background-color:#3b82f6;
+}
+
+.seventh{
+    background-color: #10b981;
+}
+
+.colorSelector{
+    display:flex;
+    padding: .1rem;
+    justify-content: space-around;
+    flex-basis:15%;
+    border-radius: 2rem;
+    min-height: 2.5vh;
+    background-color:white;
+}
+
+.colorSelector:hover{
+    cursor:pointer;
+}
+
+.colorSelectorOption{
+    flex-basis:10%;    
+    border-radius: 50%;
+}
+
+.cards {
+    display: flex;
+    justify-content: space-around;
+    padding: max(6rem, 3vw);
+    gap: 1.2rem;
+    align-items: center;
+}
+
+.card {
+    border-radius: .5rem;
+    flex: 1;
+    border: 1.5px solid #eff1f3;
+}
+
+.size {
+    background-color: var(--secondaryLight);
+    display: grid;
+    place-items: center;
+    border-radius: .5rem .5rem 0 0;
+}
+
+.size h1 {
+    display: grid;
+    place-items: center;
+    font-weight: 200;
+    font-size: 3.2rem;
+    color: var(--fontColorWeakLight);
+}
+
+.bottom {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: .9rem;
+    font-size: .65rem;
+}
+
+.category {
+    color: var(--fontColorWeakLight);
+    font-weight: 600;
+    font-size: .6rem;
+}
+
+.subtitle {
+    color: black;
+    font-weight: 600;
+}
+
+.description{
+    color: var(--fontColorMidLight);
+}
+
+.info {
+    display: flex;
+    justify-content: space-between;
+}
+
+.status {
+    display:flex;
+    gap: .5rem;
+    color: var(--fontColorWeakLight);
+    align-items: center;
+}
+
+a {
+    text-decoration: none;
+    color: var(--clrAccent);
+}
+
+.greyEyeStatus{
+    display:flex;
+    align-items: center;
+    gap: .3rem;
+}
+
+.greyCommentsStatus{
+    display:flex;
+    align-items: center;
+    gap: .3rem;
+}
+
+@media screen and (max-width:760px){
+    .cards{
+        flex-direction: column;
+    }
+}

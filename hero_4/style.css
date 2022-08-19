@@ -1,0 +1,140 @@
+@import "../Base/setup.css";
+
+:root{
+    text-align: center;
+}
+
+svg{
+    color:var(--fontColorMidLight);
+    max-height:4ch;
+}
+
+img{
+    margin: 0 auto;
+    max-width: 80%;
+    opacity: 30%;
+}
+
+label{
+    font-size: .7em;
+    padding-right: 25%;
+    display:block;
+}
+
+span{
+    display:block;
+}
+
+button{
+    background-color:var(--clrAccent);
+    min-height:5ch;
+    padding: .2em 1.4em;
+    border:none;
+    border-radius: .2rem;
+    color:var(--primaryLight)
+}
+
+main{
+    font-size: 1.2rem;
+    display:flex;
+    color:var(--fontColorMidLight);
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 0 .5rem;
+}
+
+#mainInput{
+    min-height:5ch;
+    border-radius:.3rem;
+    border: 1px solid var(--fontColorWeakLight);
+}
+
+.hero{
+    flex:1;
+}
+
+.main{
+    flex: 1;
+}
+
+.title{
+    color:var(--fontColorDark);
+    font-size: 1.7em;
+    font-weight: 500;
+}
+
+.description{
+    margin-bottom: 2.5rem;
+}
+
+.underText{
+    font-size: .7em;
+}
+
+.apps{
+    display:flex;
+    justify-content: space-around;
+    font-size: .8rem;
+}
+
+.play-wrap{
+    display:flex;
+    margin-top:1rem;
+    gap: .5rem;
+    align-items:center;
+    padding: .2em 2em;
+    border-radius: .4rem;
+    background-color:var(--secondaryLight);
+}
+
+.play-wrap:hover{
+    cursor: pointer;
+    background-color:var(--fontColorWeakLight);
+}
+
+.brand{
+    color: var(--fontColorMidLight);
+    font-size: 1em;
+    font-weight: 600;
+}
+
+.text{
+    font-size: .7em;
+    color:var(--fontColorMidLight)
+}
+
+@media screen and (min-width:720px) {
+    :root{
+        text-align:left;
+    }
+
+    .hero{
+        flex:1.2;
+    }
+
+    .main{
+        flex:1;
+    }
+
+    h1{
+        margin: 0;
+    }
+
+    body{
+        min-height:100vh;
+        margin: 0;
+        display:grid;
+        place-items:center;
+    }
+
+    main{
+        font-size: 1rem;
+        padding: 5em;
+        gap: 2em;
+        flex-direction: row;
+    }
+
+    .play-wrap{
+        margin-top: 0;
+    }
+}
