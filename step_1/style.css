@@ -1,0 +1,91 @@
+@import "../Base/setup.css";
+
+:root{
+    font-size:.9rem;
+}
+
+svg{
+    height:3ch;
+    width:3ch;
+    stroke:white;
+}
+
+p{
+    margin-top: .4rem;
+    margin-bottom: 3em;
+    color:var(--fontColorMidLight);
+    font-size:1.1em;
+}
+
+h3{
+    margin:0;
+    font-weight: 500;
+    font-size:1em;
+}
+
+img{
+    max-width:100%;
+    opacity: 20%;
+}
+
+.flex-wrap-main{
+    display:flex;
+    padding: 4em 2em;
+    gap: 2em;
+    align-items:center;
+    flex-direction: column;
+}
+.step-container{
+    display:flex;
+    overflow:hidden;
+}
+
+.left-main{
+    flex:1;
+}
+
+.right-main{
+    flex: 1;
+    display: grid;
+    place-items:center;
+    text-align: center;
+    font-size:8em;
+    color:var(--fontColorWeakLight);
+    font-weight: 100;
+    background-color:var(--secondaryLight);
+}
+
+.left{
+    position:relative;
+    margin-right:1em;
+}
+
+.svgWrap{
+    display:grid;
+    z-index: 20;
+    place-items:center;
+    border-radius: 50%;
+    background-color:var(--clrAccent);
+    padding: .5em;
+}
+
+.line{
+    position:absolute;
+    min-width: 100%;
+    opacity:30%;
+    background-color:var(--fontColorWeakLight);
+    min-height:100%;
+    transform:scaleX(10%);
+}
+
+@media screen and (min-width:720px) {
+    .flex-wrap-main{
+        flex-direction:row;
+    }
+
+    .right-main{
+        flex:2;
+        align-self:stretch;
+    }
+
+}
