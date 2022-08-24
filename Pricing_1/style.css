@@ -1,0 +1,166 @@
+@import "../Base/setup.css";
+
+svg{ 
+    display:block;
+    height: .75rem;
+    width: .75rem;
+    color:white;
+}
+
+.arrow{
+    width: 1em;
+    height: 1em;
+}
+
+
+h1, h2, h3, p {
+    margin: 0;
+}
+
+h1{
+    font-weight: 500;
+}
+
+h2{
+    display:flex;
+    align-items: center;
+}
+
+.per{
+    margin-left: .5em;
+    font-size:1.125rem;
+    color:var(--fontColorWeakLight);
+}
+
+button{
+    display:flex;
+    min-width: 100%;
+    margin-top: auto;
+    justify-content: space-between;
+    font-size: 100%;
+    color: white;
+    padding: .5em 1.5em;
+    border: none;
+    border-radius: .2em;
+    background-color: rgba(156,163,175, 90%);
+}
+
+.header-wrap{
+    padding: 2em;
+    gap: 1em;
+    display:flex;
+    flex-direction:column;
+    text-align: center;
+    align-items:center;
+}
+
+.header-wrap p{
+    color:var(--fontColorWeakLight);
+}
+
+.time-wrap{
+    display:flex;
+    border: 2px solid var(--clrAccent);
+    border-radius: .4em;
+}
+
+.padding-time{
+    padding: .5em 1em;
+    cursor:pointer;
+}
+
+.isActive{
+    background-color:var(--clrAccent);
+    color:white;
+}
+
+.card-container {
+    display:flex;
+    padding-top:  3rem;
+    gap: 2em;
+    flex-wrap:wrap;
+    min-width: 80%;
+}
+
+.card{
+    display:flex;
+    flex-direction: column;
+    flex-grow: 1;
+    border-radius: .5em;
+    border: 2px solid rgba(209,213,219,80%);
+    padding: 1.5em;
+}
+
+.prom-main{
+    border-bottom: 1px solid rgba(209,213,219,80%);
+}
+
+.type{
+    color: var(--fontColorMidLight);
+    font-size: .875em;
+    font-weight: 500;
+}
+
+.price{
+    font-size: 3em;
+    font-weight: 400;
+    margin-bottom: 1rem;
+}
+
+.avail{
+    padding: .5em 0;
+}
+
+.sample{
+    margin: .5em 0;
+    display:flex;
+    align-items: center;
+    color:var(--fontColorMidLight);
+}
+
+.circle{
+    background-color: rgba(156,163,175, 90%);
+    display:flex;
+    padding: .1em;
+    height:1rem;
+    width:1rem;
+    align-items:center;
+    margin-right: .5em;
+    border-radius: 50%;
+    width: fit-content;
+}
+
+.reminder{
+    color:var(--fontColorWeakLight);
+    font-size: .75em;
+    margin-top:1em;
+}
+
+.popular{
+    position:relative;
+    border-color: var(--clrAccent);
+}
+
+.popular button{
+    background-color: var(--clrAccent);
+}
+
+.pop-sign{
+    position:absolute;
+    right: 0;
+    top: 0;
+
+    color: white;
+    font-size: .75rem;
+    background: var(--clrAccent);
+    border-radius: 0 0 0 .2em;
+    padding: .25rem .75rem;
+    letter-spacing: .1em;
+}
+
+@media only screen and (min-width: 720px){
+    body{
+        font-size:.825rem;
+    }
+}
+
