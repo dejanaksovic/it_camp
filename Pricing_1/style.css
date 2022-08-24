@@ -74,6 +74,10 @@ button{
     color:white;
 }
 
+.isSelected button{
+    background-color: var(--clrAccent);
+}
+
 .card-container {
     display:flex;
     padding-top:  3rem;
@@ -160,7 +164,10 @@ button{
 
 @media only screen and (min-width: 720px){
     body{
-        font-size:.825rem;
+        font-size:1rem;
     }
 }
 
+.isSelected{
+    border-color: var(--clrAccent);
+}
