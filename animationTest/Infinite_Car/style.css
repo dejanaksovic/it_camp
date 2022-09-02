@@ -12,8 +12,6 @@ img{
     max-width:100%;
 }
 
-/* Kontrolna tabla */
-
 /* Gas */
 .control-panel{
     position:absolute;
@@ -91,14 +89,13 @@ img{
 .main-car{
     position:absolute;
     width:520px;
-    bottom:8%;
+    bottom:10%;
     z-index:1;
     transform:rotateY(180deg);
 }
 
 .road-container{
     --var-speed: 7s;
-
     position: absolute;
     bottom:0;
     display:grid;
