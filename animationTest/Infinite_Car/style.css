@@ -5,8 +5,6 @@ body{
     overflow: hidden;
     background-image: url("https://images2.alphacoders.com/120/1209425.png");
     background-size:cover;
-
-    --var-speed: 7s;
 }
 
 img{
@@ -27,6 +25,8 @@ img{
 }
 
 .gas-pedal{
+    position:absolute;
+    left:10%;
     display:flex;
     flex-direction: column;
     align-items: center;
@@ -45,15 +45,26 @@ img{
     background-color:grey;
     height:5%;
 }
-
+ 
 .gas-pedal:hover{
     transform: rotateX(30deg);
     box-shadow:0 5px 10px black;
 }
 
+.gas-pedal:hover ~ .road-container{
+    --var-speed: 3s;
+}
+
+.gas-pedal:hover ~ .speed-scale{
+    --slope:160deg;
+}
+
 /* Brzinometar */
 .speed-scale{
-    position:relative;
+    --slope: 30deg;
+    position:absolute;
+    left:20%;
+    top:0;
     display:grid;
     align-items: center;
     border: 8px solid rgb(12, 12, 240);
@@ -67,7 +78,6 @@ img{
 
 .scale{
     transition:all .5s linear;
-    --slope: 30deg;
     height:2%;
     width:50%;
     transform-origin:right;
@@ -87,6 +97,8 @@ img{
 }
 
 .road-container{
+    --var-speed: 7s;
+
     position: absolute;
     bottom:0;
     display:grid;
