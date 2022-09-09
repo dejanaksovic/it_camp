@@ -57,6 +57,10 @@ img{
     --slope:160deg;
 }
 
+.gas-pedal:hover ~ .main-car{
+    transform:translateX(100%) rotateY(180deg);
+}
+
 /* Brzinometar */
 .speed-scale{
     --slope: 30deg;
@@ -89,9 +93,10 @@ img{
 .main-car{
     position:absolute;
     width:520px;
-    bottom:10%;
+    bottom:5%;
     z-index:1;
     transform:rotateY(180deg);
+    transition:all 1s linear;
 }
 
 .road-container{
@@ -113,7 +118,7 @@ img{
     position:absolute;
     z-index:3;
     width:700px;
-    bottom:-40%;
+    bottom:-80%;
     left:40%;
 }
 
