@@ -146,16 +146,24 @@ a {
   width:100%;
   display:flex;
   justify-content:space-between;
-  padding: 2rem;
+  padding: 1rem 10rem;
+}
+
+nav a{
+  color: rgba(0, 0, 0, 0.5);
 }
 
 nav>ul{
  display:flex;
- gap: 1rem;
-
+ gap: 2rem;
 }
 
-li>ul{
+.extra{
+  color: rgba(0, 0, 0, 0.5);
+  position:absolute;
+  padding: 2rem;
+  background:white;
+  border: 1px solid rgba(0, 0, 0 ,.1);
   display:none;
 }
 
@@ -164,9 +172,26 @@ li>ul{
   gap:.5rem;
 }
 
+li:hover *{
+  display:block;
+}
+
+.logo{
+  background-color:lightgrey;
+  border-radius: 50%;
+  padding: 0 .5rem;
+  aspect-ratio: 1/1;
+}
+
+.logo svg{
+  fill:var(--clr-primary);
+  width:1.2ch;
+  aspect-ratio: 1/1;
+}
+
 .intro-container{
   min-height:100vh;
-  background:url("https://media.istockphoto.com/photos/dream-home-luxury-house-success-suburban-house-picture-id1281554848?b=1&k=20&m=1281554848&s=170667a&w=0&h=s7X81b-3hfEGTYVkFKDOG7ZDySs57Tpw_WAETXi5xnQ=");
+  background:url("needed/bg-header.jpg");
   background-size: 100%;
 }
 
@@ -196,6 +221,7 @@ li>ul{
   border-radius: 1rem;
 }
 
+/* Drugi */
 .search-container{
   background: var(--clr-primary);
   display:flex;
@@ -218,15 +244,18 @@ li>ul{
 
 .search-img img{
   width: 100%;
+  height:100%;
 }
 
 .search-button{
   background:black;
+  width: fit-content;
   color:white;
   width:30%;
   align-self:center;
 }
 
+/* Treci */
 .give-container{
   display:grid;
   grid-template-columns: 1fr 1fr 1fr;

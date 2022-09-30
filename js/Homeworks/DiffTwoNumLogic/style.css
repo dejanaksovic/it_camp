@@ -1,0 +1,22 @@
+body{
+    margin: 0;
+    display:grid;
+    place-items:center;
+    min-height:100vh;
+}
+
+main{
+    display:flex;
+    gap:3rem;
+
+}
+
+main>*{
+    flex:1;
+}
+
+.and-logic, .or-logic{
+    display:inline-block;
+    min-width:5ch;
+    border-bottom: 1px solid lightgrey;
+}

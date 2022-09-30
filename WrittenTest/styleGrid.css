@@ -1,0 +1,23 @@
+body{
+    min-height: 100vh;
+    margin:0;
+    display:grid;
+    place-items:center;
+}
+
+div{
+    border: 1px solid black;
+    text-align: center;
+}
+
+.grid-container{
+    min-height:40vh;
+    aspect-ratio: 2/1;
+    display:grid;
+    grid-template-rows: 1fr 5fr 1fr;
+    grid-template-columns: 1fr 3fr 1fr;
+}
+
+.child:nth-child(1), .child:nth-child(5){
+    grid-column: 1/-1;
+}
