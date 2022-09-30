@@ -6,9 +6,10 @@ outputOr= document.querySelector(".or-logic")
 
 button= document.querySelector("button")//Only having one button makes it so we don't need special selector
 
-//flavor colors--> for consistency reasons
+//flavor colors--> for consistency reasons putting them in variables 
 trueColor= "green"
 falseColor= "red"
+neutralColor= "grey"
 
 //Logic function
 const doLogic = () =>{
@@ -18,9 +19,14 @@ const doLogic = () =>{
 
     //doing the logic, putting values in seperate variables for clean code
     resAnd= (a>0 && b<a)
+    if(resAnd){
     resOr= (a>b || b>0)
+    }
+    else{
+        resOr="Nije ispunjen prvi uslov"
+    }
 
-    //setting resaults to our resault fields
+    //setting resaults to our resault fields/ spans
     outputAnd.textContent= resAnd
     outputOr.textContent= resOr
 
@@ -39,7 +45,7 @@ const doLogic = () =>{
         colorOut(outputOr, trueColor)
     }
     else{
-        colorOut(outputOr, falseColor)
+        colorOut(outputOr, neutralColor)
     }
 }
 
