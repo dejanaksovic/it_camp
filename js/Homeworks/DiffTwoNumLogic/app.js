@@ -26,7 +26,7 @@ const doLogic = () =>{
         resOr="Nije ispunjen prvi uslov"
     }
 
-    //setting resaults to our resault fields/ spans
+    //setting the resaults to our resault fields/ spans
     outputAnd.textContent= resAnd
     outputOr.textContent= resOr
 
@@ -57,7 +57,7 @@ const colorOut = (elemToColor, colorToPaint) => {
 //adding click event
 button.addEventListener("click", doLogic)
 
-//Adding the same on the enter click, as long as the focus is on one of inputs
+//Adding the same on the enter click, as long as the focus is on one of the inputs
 elemA.addEventListener("keydown", e=>{
     //Checking for ENTER key
     if(e.key=="Enter"){
