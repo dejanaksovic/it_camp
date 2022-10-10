@@ -56,9 +56,21 @@ const rearrange = () => {
 
 //TODO: DELJENJE KARATA
 const giveCards = () => {
-    for (let i = 0; i < 5 * 4 && i < deck.length; i++) {
+    for (let i = 0; i < 20 && 0 < deck.length; i++) {
         hands[i % 4].push(deck.pop())
     }
+}
+
+//TODO: CALCULATE SCORES AND SHOW THEM ON SCREEN
+const calcResault = () => {
+    let scores = [0, 0, 0, 0];
+
+    for (let i = 0; i < 4; i++) {
+        playersPoss[i].forEach(item => {
+            scores[i]
+        })
+    }
+
 }
 
 //TODO: JEDAN IGRACEV RED
@@ -71,18 +83,33 @@ const doTurn = () => {
     hands[currPlayer].splice(num, 1)
 
     //AKO JE VRH TALONA(BROJ) JEDNAK BACENOJ KARTI(BROJ), IGRAC KUPI
-    if (tableCards.length > 0) {
+    if (tableCards.length > 1) {
 
-        if (hands[currPlayer][num].slice(0, 1) == tableCards[tableCards.length-1].slice(0, 1)) {
+        if (tableCards[tableCards.length - 1].slice(0, 1) == tableCards[tableCards.length - 2].slice(0, 1)) {
             alert(`Igrac ${names[currPlayer]} nosi karte na talonu \nBroj karata: ${tableCards.length}`)
 
-            for (let i = 0; i < tableCards.length; i++) {
+            while (tableCards.length > 0) {
+                console.log(tableCards.length)
                 playersPoss[currPlayer].push(tableCards.pop())
+                console.log(playersPoss[currPlayer])
             }
 
             return
         }
     }
+}
+
+const counter = (test) => {
+    switch (true) {
+        case '1' === test:
+        case 'A' === test:
+        case 'J' === test:
+        case 'Q' === test:
+        case 'K' === test:
+            return 1;
+    }
+
+    return 0;
 }
 
 //TODO: NAPRAVI GLAVNU FUNKCIJU
@@ -97,18 +124,30 @@ const gameEngine = () => {
     rearrange()
 
     //GLAVNA PETLJA
-    while (deck.length != 0) {
+    while (deck.length > 0) {
         //DELJENJE KARATA
-        itterator= 1 //VISE RADI TESTIRANJA 
-        giveCards()
+        itterator = 1 //VISE RADI TESTIRANJA 
+        giveCards();
         alert(`Deljenje broj ${itterator}\nPreostalo karata u spilu ${deck.length}`)
 
         //IGRACI IGRAJU 5 PUTA POSTO SVAKO DOBIJA 5 KARATA
-        for (let i = 0; i < 5 * 4; i++) {
+        for (let i = 0; (i < 5 * 4) && deck.length>0; i++) {
             alert(`Trenutno stanje na talonu: ${tableCards}\nIgrac koji igra ${names[currPlayer]}`)
             doTurn()
             currPlayer = (currPlayer + 1) % 4
         }
+
+        itterator++;
+    }
+
+    resaults = [0, 0, 0, 0];
+
+    for (let i = 0; i < 4; i++) {
+        playersPoss[0].forEach(item => {
+            resaults[i] += counter(item.slice[0, 1]);
+        })
+
+        alert(`Rezultati su ${names[0]}: ${resaults[0]}\n${names[1]}: ${resaults[1]}\n${names[2]}: ${resaults[2]}\n${names[0]}: ${resaults[0]}`)
     }
 }
 
