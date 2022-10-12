@@ -2,7 +2,7 @@
 
 niz = [5, 25, "apple", [25, "apple", "banana", "mango"]]
 
-function counter(array, item) {
+const counter = (array, item) => {
 
     toReturn = 0
 
