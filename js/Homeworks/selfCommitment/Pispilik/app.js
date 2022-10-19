@@ -85,7 +85,7 @@ const doTurn = () => {
     //AKO JE VRH TALONA(BROJ) JEDNAK BACENOJ KARTI(BROJ), IGRAC KUPI
     if (tableCards.length > 1) {
 
-        if (tableCards[tableCards.length - 1].slice(0, 1) == tableCards[tableCards.length - 2].slice(0, 1)) {
+        if (tableCards[tableCards.length - 1].slice(0, 1) === tableCards[tableCards.length - 2].slice(0, 1)) {
             alert(`Igrac ${names[currPlayer]} nosi karte na talonu \nBroj karata: ${tableCards.length}`)
 
             while (tableCards.length > 0) {
