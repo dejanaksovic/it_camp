@@ -1,3 +1,32 @@
+//KARD CLASS
+class Card {
+    constructor(color, sign, number) {
+        this.color = color
+        this.sign = sign
+        this.number = number
+    }
+
+    render(query) {
+    
+        const appender = document.querySelector(query)
+
+        let el = document.createElement("div")
+        el.style.color = this.color
+
+        let t = `${this.sign} ${this.number}`
+
+        el.innerHTML = t
+
+        appender.appendChild(el)
+    }
+
+}
+
+//RESET POS
+const resetCard = (query) => {
+    document.querySelector(query).innerHTML = ""
+}
+
 //POTREBNO ZA SPIL
 signs = ["P", "K", "H", "T"]
 numbers = [];
@@ -113,43 +142,6 @@ const counter = (test) => {
 }
 
 //TODO: NAPRAVI GLAVNU FUNKCIJU
-const gameEngine = () => {
-    currPlayer = 0
-    //TODO: UZETI NEOPHODNO INPUTE
-    for (let i = 0; i < 4; i++) {
-        names.push(prompt(`Unesite ime igraca ${i + 1}`))
-    }
 
-    //MESAMO SPILL 
-    rearrange()
-
-    //GLAVNA PETLJA
-    while (deck.length > 0) {
-        //DELJENJE KARATA
-        itterator = 1 //VISE RADI TESTIRANJA 
-        giveCards();
-        alert(`Deljenje broj ${itterator}\nPreostalo karata u spilu ${deck.length}`)
-
-        //IGRACI IGRAJU 5 PUTA POSTO SVAKO DOBIJA 5 KARATA
-        for (let i = 0; (i < 5 * 4) && deck.length>0; i++) {
-            alert(`Trenutno stanje na talonu: ${tableCards}\nIgrac koji igra ${names[currPlayer]}`)
-            doTurn()
-            currPlayer = (currPlayer + 1) % 4
-        }
-
-        itterator++;
-    }
-
-    resaults = [0, 0, 0, 0];
-
-    for (let i = 0; i < 4; i++) {
-        playersPoss[0].forEach(item => {
-            resaults[i] += counter(item.slice[0, 1]);
-        })
-
-        alert(`Rezultati su ${names[0]}: ${resaults[0]}\n${names[1]}: ${resaults[1]}\n${names[2]}: ${resaults[2]}\n${names[0]}: ${resaults[0]}`)
-    }
-}
-
-gameEngine()
+//TODO: RENDER CARDS PROGRAMATICALLY
 
