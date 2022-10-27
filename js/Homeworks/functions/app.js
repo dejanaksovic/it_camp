@@ -1,8 +1,5 @@
 //Da se okrene broj
 //Da li je rec palindrom
-
-let test = 123
-
 function reverse(num) {
     numString = String(num)
     temp = ""
