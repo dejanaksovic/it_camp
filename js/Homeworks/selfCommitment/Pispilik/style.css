@@ -1,0 +1,54 @@
+body {
+    height:100vh;
+    display: flex;
+    margin: 0;
+    justify-content: space-around;
+    align-items: baseline;
+    background:green;
+}
+
+.held-cards{
+    width:1rem;
+    aspect-ratio: 1/1;
+    position:relative;
+}
+
+.card {
+    transition: border .1s linear;
+    position:absolute;
+    border: .5px solid black;
+    min-width: 3.5rem;
+    padding: .5rem;
+    aspect-ratio: 1/2;
+    background:white;
+}
+
+.card:nth-child(1) {
+    transform: rotate(-60deg);
+    transform-origin: bottom;   
+}
+
+.card:nth-child(2) {
+    transform: rotate(-30deg);
+    transform-origin: bottom;   
+}
+
+.card:nth-child(3) {
+    transform: rotate(0deg);
+    transform-origin: bottom;   
+}
+
+.card:nth-child(4) {
+    transform: rotate(30deg);
+    transform-origin: bottom;   
+}
+
+.card:nth-child(5) {
+    transform: rotate(60deg);
+    transform-origin: bottom;   
+}
+
+.card:hover {
+    border: 2px solid lime;
+    z-index: 10;
+}

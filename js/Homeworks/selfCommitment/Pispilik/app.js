@@ -1,22 +1,71 @@
+//CARD CLASS
+class Card {
+    constructor(color, sign, number) {
+        this.color = color
+        this.sign = sign
+        this.number = number
+    }
+
+    render(element) {
+        let temp = document.createElement("div")
+        temp.style.color = this.color
+
+        let inner = `<p>${this.number}${this.sign}</p>
+        <p style = "position: absolute; bottom: 0; right: .35rem; transform: rotate(180deg)">${this.number}${this.sign}</p>
+        `
+
+        temp.innerHTML = inner
+
+        element.appendChild(temp)
+    }
+}
+
+
+//Vizualni divovi za karte
+const VizCards = document.querySelectorAll(".card")
+
 //POTREBNO ZA SPIL
 signs = ["P", "K", "H", "T"]
 numbers = [];
 deck = [];
 
 //NEOPHODNO IGRI
-
-//IMENA
-names = [];
-currPlayer = 0;//INDEKS IGRACA KOJI TRENUTNO IGRA
-
-//KARTE KOJE SU IGRACI OSVOJILI
-playersPoss = [[], [], [], []];
-
-//TRENUTNO U RUCI
-hands = [[], [], [], []]
+players = [
+    {
+        name: "",
+        hand: [],
+        posession: []
+    },
+    {
+        name: "",
+        hand: [],
+        posession: []
+    },
+    {
+        name: "",
+        hand: [],
+        posession: []
+    },
+    {
+        name: "",
+        hand: [],
+        posession: []
+    }
+]
 
 //TRENUTNO NA TALONU
 tableCards = [];
+
+//RESET POS
+const resetCardViz = (element) => {
+    element.innerHTML = ""
+}
+
+const setCards = (cards) => {
+    cards.forEach((element, index) => {
+        let temp = new Card()
+    });
+}
 
 //TODO: GENERISATI BROJEVE OD 1-13 (U HEKSU.... skoro)
 for (let i = 1; i < 14; i++) {
@@ -41,7 +90,20 @@ for (let i = 1; i < 14; i++) {
 
 for (let i = 0; i < numbers.length; i++) {
     for (let j = 0; j < signs.length; j++) {
-        deck.push(numbers[i] + signs[j])
+        let color = ""
+
+        switch (signs[j]) {
+            case "K":
+                color = "red"
+                break;
+            case "H":
+                color = "red"
+                break;
+            default:
+                color = "black"
+        }
+
+        deck.push(new Card(color, signs[j], numbers[i]))
     }
 }
 
@@ -56,61 +118,25 @@ const rearrange = () => {
 
 //TODO: DELJENJE KARATA
 const giveCards = () => {
-    for (let i = 0; i < 5 * 4 && i < deck.length; i++) {
+    for (let i = 0; i < 20 && 0 < deck.length; i++) {
         hands[i % 4].push(deck.pop())
     }
 }
 
+//TODO: CALCULATE SCORES AND SHOW THEM ON SCREEN
+
 //TODO: JEDAN IGRACEV RED
 //OBICNA LOGIKA ZA BACANJE KARATA I TESTIRANJE ZA KUPLJENJE
-const doTurn = () => {
-    //TODO: UZIMAMO SVE NEOPHODNE INFORMACIJE (KOJU KARTU BACA)
-    num = Number(prompt(`Trenutni igrac: ${names[currPlayer]}\nKarte u ruci: ${hands[currPlayer]}\nPoslednja karta na talonu: ${tableCards[tableCards.length - 1]}\n Unesite redni broj karte koju zelite da bacite (indeksirati od 0)`))
-
-    tableCards.push(hands[currPlayer][num])
-    hands[currPlayer].splice(num, 1)
-
-    //AKO JE VRH TALONA(BROJ) JEDNAK BACENOJ KARTI(BROJ), IGRAC KUPI
-    if (tableCards.length > 0) {
-
-        if (hands[currPlayer][num].slice(0, 1) == tableCards[tableCards.length-1].slice(0, 1)) {
-            alert(`Igrac ${names[currPlayer]} nosi karte na talonu \nBroj karata: ${tableCards.length}`)
-
-            for (let i = 0; i < tableCards.length; i++) {
-                playersPoss[currPlayer].push(tableCards.pop())
-            }
-
-            return
-        }
-    }
-}
 
 //TODO: NAPRAVI GLAVNU FUNKCIJU
-const gameEngine = () => {
-    currPlayer = 0
-    //TODO: UZETI NEOPHODNO INPUTE
-    for (let i = 0; i < 4; i++) {
-        names.push(prompt(`Unesite ime igraca ${i + 1}`))
-    }
 
-    //MESAMO SPILL 
-    rearrange()
+//TODO: RENDER CARDS PROGRAMATICALLY
 
-    //GLAVNA PETLJA
-    while (deck.length != 0) {
-        //DELJENJE KARATA
-        itterator= 1 //VISE RADI TESTIRANJA 
-        giveCards()
-        alert(`Deljenje broj ${itterator}\nPreostalo karata u spilu ${deck.length}`)
+//TESTING SPACE
+rearrange()
+for(let i=0; i<5; i++) {
+    deck[i].render(VizCards[i])
 
-        //IGRACI IGRAJU 5 PUTA POSTO SVAKO DOBIJA 5 KARATA
-        for (let i = 0; i < 5 * 4; i++) {
-            alert(`Trenutno stanje na talonu: ${tableCards}\nIgrac koji igra ${names[currPlayer]}`)
-            doTurn()
-            currPlayer = (currPlayer + 1) % 4
-        }
-    }
 }
 
-gameEngine()
-
+console.log("HEY");

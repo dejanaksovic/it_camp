@@ -1,6 +1,6 @@
 let firstOperand, secondOperand, Operation, resault
 
-while (true) {2
+while (true) {
 
     Operation= Number(prompt("Enter one of the following options: \n 0: Exit the programm \n 1: Addition \n 2: Subtraction \n 3: Multiplication \n 4: Division"))
     firstOperand= Number(prompt("Enter the first member of the operation"))
