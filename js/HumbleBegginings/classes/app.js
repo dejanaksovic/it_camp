@@ -49,6 +49,7 @@ class TV {
             this.channel = channel
         }
     }
+    
 
     Reset() {
         this.channel = 1

@@ -7,6 +7,7 @@ class Card {
     }
 
     render(element) {
+        element.style.display = "block"
         let temp = document.createElement("div")
         temp.style.color = this.color
 
@@ -59,12 +60,7 @@ tableCards = [];
 //RESET POS
 const resetCardViz = (element) => {
     element.innerHTML = ""
-}
-
-const setCards = (cards) => {
-    cards.forEach((element, index) => {
-        let temp = new Card()
-    });
+    element.style.display = "none"
 }
 
 //TODO: GENERISATI BROJEVE OD 1-13 (U HEKSU.... skoro)
@@ -119,14 +115,21 @@ const rearrange = () => {
 //TODO: DELJENJE KARATA
 const giveCards = () => {
     for (let i = 0; i < 20 && 0 < deck.length; i++) {
-        hands[i % 4].push(deck.pop())
+        players.hand[i%4].push(deck.pop())
     }
 }
 
-//TODO: CALCULATE SCORES AND SHOW THEM ON SCREEN
-
 //TODO: JEDAN IGRACEV RED
+
+
 //OBICNA LOGIKA ZA BACANJE KARATA I TESTIRANJE ZA KUPLJENJE
+const doTurn = (inx, cardInx) => {
+    tableCards.push(players[inx].hand[cardInx])
+    if (tableCards[tableCards.length - 1] == tableCards[tableCards.length - 2]) {
+        players[inx].posession = players[inx].posession.concat(tableCards)
+        tableCards.length = 0
+    }
+}
 
 //TODO: NAPRAVI GLAVNU FUNKCIJU
 
@@ -134,9 +137,14 @@ const giveCards = () => {
 
 //TESTING SPACE
 rearrange()
-for(let i=0; i<5; i++) {
-    deck[i].render(VizCards[i])
+giveCards()
 
-}
+//MAIN LOOP SIMULATION
+const inx = 0
 
-console.log("HEY");
+players[i].hand.forEach((element, index) => {
+    element.render(VizCards[index])
+    console.log(element, VizCards[index]);
+});
+
+

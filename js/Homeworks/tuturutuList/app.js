@@ -5,7 +5,8 @@ let Container = document.querySelector(".todos")
 
 submit.addEventListener("click", e=> {
     e.preventDefault()
-    
+    if(mainInput.value==="")
+    return
     //Todo thing
     let newTodo = document.createElement("div")
     newTodo.classList.add("todo")
@@ -18,4 +19,5 @@ submit.addEventListener("click", e=> {
     deleteButton.addEventListener("click", e=> {
         Container.removeChild(newTodo)
     })
+    mainInput.value = ""
 })
